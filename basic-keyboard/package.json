@@ -14,7 +14,7 @@
 		"vite": "^4.3.9"
 	},
 	"dependencies": {
-		"raxis": "*",
-		"raxis-plugins": "*"
+		"raxis": "^1.3.2",
+		"raxis-plugins": "^1.1.2"
 	}
 }

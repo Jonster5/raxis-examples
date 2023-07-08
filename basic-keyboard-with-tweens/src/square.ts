@@ -1,30 +1,11 @@
 import { Component, ECS, With } from 'raxis';
-import { Inputs, Root, Sprite, Transform, Tween, addTween, getTween, removeTween } from 'raxis-plugins';
-import {
-	BackOut,
-	CircIn,
-	CubicIn,
-	CubicOut,
-	ElasticIn,
-	ExpoIn,
-	QuadIn,
-	QuadInOut,
-	QuintIn,
-	QuintOut,
-	SineIn,
-	SineInOut,
-	Vec2,
-	linear,
-} from 'raxis/math';
+import { Inputs, Sprite, Transform, Tween, addTween, getTween, removeTween } from 'raxis-plugins';
+import { Vec2, linear } from 'raxis/math';
 
 export class Square extends Component {}
 
 function setupSquare(ecs: ECS) {
-	const root = ecs.query([], With(Root)).entity();
-
-	const square = ecs.spawn(new Square(), new Transform(new Vec2(100, 100)), new Sprite('rectangle', 'royalblue'));
-
-	root.addChild(square);
+	ecs.spawn(new Square(), new Transform(new Vec2(100, 100)), new Sprite('rectangle', 'royalblue'));
 }
 
 function moveSquare(ecs: ECS) {
